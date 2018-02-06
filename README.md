@@ -4,7 +4,9 @@ This is a reproduction of an issue I'm having combining react with the google ca
 
 This might be a bizarrely specific issue, but I'm hoping someone else has seen something similar.
 
-In short, it seems like when importing the Google Cast Chrome Sender API library into my page, it replaces certain core DOM functions (notably `document.createElement`) in ways that are incompatible with use of react.js. I'm only seeing this on iOS chrome. Loading the same page in android chrome or iOS safari doesn't seem to show this issue.
+In short, it seems like when importing the Google Cast Chrome Sender API library into my react application, core dom functions that react relies on such as event creation start throwing errors causing state refreshes, clicks and other events to not be processed.
+
+It looks like certain core DOM functions (notably `document.createElement`) are being replaced in ways that are incompatible with use of react.js. I'm only seeing this on iOS chrome. Loading the same page in android chrome or iOS safari doesn't seem to show this issue.
 
 I can't find any reference to this behaviour, it seems to just be an implementation detail (I'm guessing shimming to enable something). I'm at a loss on how to make the combination of react and casting work in iOS chrome and would really appreciate any new avenues of investigation.
 
