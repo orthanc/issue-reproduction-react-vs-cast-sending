@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        // Backup the createEvent function so that we can check it later.
+        window.documentBackup = {
+          createEvent: document.createEvent,
+        }
+        window['__onGCastApiAvailable'] = function(available) {
+          // NoOp: Required for the cast import
+        };
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Import the chromecast sender api -->
+    <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+  </body>
+</html>
