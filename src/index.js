@@ -19,7 +19,7 @@ class App extends Component {
 
   show = () => {
     let evt = document.createEvent('event');
-    alert(evt);
+    alert('Created Event, it should be type event, but it is ... ' + evt);
     this.setState({
       show: true
     });
